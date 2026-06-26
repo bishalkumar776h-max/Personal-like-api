@@ -1,0 +1,26 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "app.py",
+            "use": "@vercel/python",
+            "config": {
+                "runtime": "python3.9",
+                "includeFiles": [
+                    "shappno_bd.txt",
+                    "shappno_ind.txt",
+                    "like_pb2.py",
+                    "like_count_pb2.py",
+                    "uid_generator_pb2.py"
+                ],
+                "maxDuration": 20
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "app.py"
+        }
+    ]
+}
